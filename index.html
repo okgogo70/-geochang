@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="거창초재중탕 - 부산 반송큰시장 30년 전통. 각종 중탕, 한약, 건강즙(배즙·양파즙·호박즙·장어즙) 전문점">
+<title>거창초재중탕 | 30년 전통 한약재 중탕·건강즙 전문점</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brown: #5B3A1A;
+  --gold: #C8963E;
+  --gold-light: #E8C675;
+  --cream: #FDF8F0;
+  --cream2: #F5EDE0;
+  --dark: #2C1810;
+  --text: #3D2B1F;
+  --text-light: #7A6652;
+  --white: #fff;
+  --green: #4A7C59;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:var(--cream);line-height:1.7;}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(253,248,240,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,150,62,.15);}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;height:64px;}
+.logo{font-family:'Noto Serif KR',serif;font-size:1.35rem;font-weight:700;color:var(--brown);text-decoration:none;}
+.logo b{color:var(--gold);}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--text);font-size:.92rem;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-call{background:var(--brown);color:#fff;padding:9px 18px;border-radius:40px;text-decoration:none;font-size:.88rem;font-weight:600;transition:background .2s;}
+.nav-call:hover{background:var(--gold);}
+.hamburger{display:none;cursor:pointer;flex-direction:column;gap:5px;}
+.hamburger span{width:22px;height:2px;background:var(--brown);}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--white);padding:16px 20px;box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:99;}
+.mobile-menu.open{display:block;}
+.mobile-menu a{display:block;padding:12px 0;color:var(--text);text-decoration:none;font-weight:500;border-bottom:1px solid var(--cream2);}
+
+@media(max-width:768px){
+  .nav-links,.nav-call{display:none;}
+  .hamburger{display:flex;}
+}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#2C1810,#5B3A1A 60%,#8B6914);padding:100px 20px 60px;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 40%,rgba(200,150,62,.12),transparent 60%);}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:1;}
+.hero-text{color:#fff;}
+.hero-badge{display:inline-block;border:1px solid rgba(200,150,62,.4);color:var(--gold-light);padding:6px 16px;border-radius:40px;font-size:.82rem;margin-bottom:20px;letter-spacing:.5px;}
+.hero h1{font-family:'Noto Serif KR',serif;font-size:2.8rem;font-weight:700;line-height:1.25;margin-bottom:16px;}
+.hero h1 em{color:var(--gold-light);font-style:normal;}
+.hero-desc{font-size:1.05rem;color:rgba(255,255,255,.78);margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-gold{background:var(--gold);color:var(--dark);padding:13px 28px;border-radius:40px;text-decoration:none;font-weight:700;transition:all .2s;}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.35);color:#fff;padding:12px 28px;border-radius:40px;text-decoration:none;font-weight:500;transition:all .2s;}
+.btn-ghost:hover{border-color:var(--gold-light);color:var(--gold-light);}
+.hero-card{background:rgba(255,255,255,.07);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:40px;text-align:center;color:#fff;max-width:380px;margin:0 auto;}
+.hero-card .icon{font-size:3.5rem;margin-bottom:12px;}
+.hero-card h3{font-family:'Noto Serif KR',serif;font-size:1.5rem;margin-bottom:8px;}
+.hero-card p{color:rgba(255,255,255,.65);font-size:.9rem;margin-bottom:20px;}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.stat{background:rgba(255,255,255,.06);padding:14px;border-radius:10px;}
+.stat strong{display:block;font-size:1.5rem;color:var(--gold-light);}
+.stat small{font-size:.75rem;color:rgba(255,255,255,.5);}
+
+@media(max-width:768px){
+  .hero-inner{grid-template-columns:1fr;text-align:center;}
+  .hero h1{font-size:2rem;}
+  .hero-desc{margin:0 auto 32px;}
+  .hero-btns{justify-content:center;}
+  .hero-card{margin-top:24px;}
+}
+
+/* SECTIONS COMMON */
+.section{padding:80px 20px;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.sec-head{text-align:center;margin-bottom:48px;}
+.sec-tag{color:var(--gold);font-weight:700;font-size:.8rem;letter-spacing:2px;margin-bottom:8px;}
+.sec-title{font-family:'Noto Serif KR',serif;font-size:2rem;font-weight:700;color:var(--brown);margin-bottom:10px;}
+.sec-sub{color:var(--text-light);font-size:1rem;max-width:520px;margin:0 auto;}
+
+/* ABOUT */
+.about{background:var(--white);}
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.about-card{background:var(--cream);border-radius:16px;padding:36px 28px;text-align:center;transition:transform .25s;}
+.about-card:hover{transform:translateY(-6px);}
+.about-card .ic{font-size:2.2rem;margin-bottom:14px;}
+.about-card h3{font-size:1.1rem;font-weight:700;color:var(--brown);margin-bottom:8px;}
+.about-card p{color:var(--text-light);font-size:.92rem;}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;}}
+
+/* PRODUCTS */
+.products{background:var(--cream2);}
+.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.prod-card{background:var(--white);border-radius:16px;padding:28px;transition:transform .25s;border:1px solid rgba(200,150,62,.08);}
+.prod-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(91,58,26,.07);}
+.prod-card .top{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.prod-card .emoji{font-size:2.2rem;width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.prod-card:nth-child(1) .emoji{background:#FFF3E0;}
+.prod-card:nth-child(2) .emoji{background:#E8F5E9;}
+.prod-card:nth-child(3) .emoji{background:#FFF8E1;}
+.prod-card:nth-child(4) .emoji{background:#FFEBEE;}
+.prod-card:nth-child(5) .emoji{background:#F3E5F5;}
+.prod-card:nth-child(6) .emoji{background:#E0F7FA;}
+.prod-card h3{font-size:1.15rem;font-weight:700;color:var(--brown);}
+.prod-card .tag{display:inline-block;background:#e8f0e8;color:var(--green);padding:3px 10px;border-radius:20px;font-size:.72rem;font-weight:600;margin-top:2px;}
+.prod-card p{color:var(--text-light);font-size:.92rem;}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;}
+.chip{background:var(--cream);color:var(--text-light);padding:4px 12px;border-radius:20px;font-size:.78rem;}
+@media(max-width:768px){.prod-grid{grid-template-columns:1fr;}}
+
+/* PROCESS */
+.process{background:var(--white);}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.step{text-align:center;position:relative;}
+.step .num{width:48px;height:48px;background:linear-gradient(135deg,var(--brown),var(--gold));color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;margin:0 auto 12px;}
+.step h4{font-size:1rem;color:var(--brown);margin-bottom:6px;}
+.step p{color:var(--text-light);font-size:.85rem;}
+.step::after{content:'→';position:absolute;top:14px;right:-14px;color:var(--gold);font-size:1.2rem;}
+.step:last-child::after{display:none;}
+@media(max-width:768px){.steps{grid-template-columns:1fr 1fr;}.step::after{display:none;}}
+@media(max-width:480px){.steps{grid-template-columns:1fr;}}
+
+/* REVIEWS */
+.reviews{background:linear-gradient(135deg,#2C1810,#5B3A1A);color:#fff;}
+.reviews .sec-title{color:#fff;}
+.reviews .sec-sub{color:rgba(255,255,255,.55);}
+.reviews .sec-tag{color:var(--gold-light);}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.rev-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px;}
+.rev-card .stars{color:var(--gold-light);margin-bottom:12px;}
+.rev-card .txt{color:rgba(255,255,255,.82);font-size:.92rem;margin-bottom:16px;}
+.rev-card .author{font-weight:700;font-size:.88rem;}
+.rev-card .meta{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:2px;}
+@media(max-width:768px){.rev-grid{grid-template-columns:1fr;}}
+
+/* CONTACT */
+.contact{background:var(--cream);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;}
+.info-box{background:var(--white);border-radius:20px;padding:40px;}
+.info-box h3{font-family:'Noto Serif KR',serif;font-size:1.5rem;color:var(--brown);margin-bottom:28px;}
+.info-row{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start;}
+.info-row .ic{width:44px;height:44px;background:var(--cream2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.info-row h4{font-weight:700;color:var(--brown);margin-bottom:2px;font-size:.95rem;}
+.info-row p{color:var(--text-light);font-size:.9rem;}
+.info-row a{color:var(--gold);text-decoration:none;font-weight:600;}
+.info-row a:hover{text-decoration:underline;}
+.map-box{background:var(--white);border-radius:20px;overflow:hidden;}
+.map-box iframe{width:100%;height:320px;border:none;}
+.map-caption{padding:20px 28px;}
+.map-caption h4{font-weight:700;color:var(--brown);margin-bottom:4px;}
+.map-caption p{color:var(--text-light);font-size:.88rem;}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr;}}
+
+/* CTA */
+.cta{padding:64px 20px;background:linear-gradient(135deg,var(--gold),var(--brown));text-align:center;}
+.cta h2{font-family:'Noto Serif KR',serif;font-size:1.8rem;color:#fff;margin-bottom:8px;}
+.cta p{color:rgba(255,255,255,.85);margin-bottom:24px;}
+.cta-btn{display:inline-block;background:#fff;color:var(--brown);padding:14px 36px;border-radius:40px;font-size:1.15rem;font-weight:700;text-decoration:none;transition:all .2s;}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.18);}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,.55);padding:36px 20px;}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.f-logo{font-family:'Noto Serif KR',serif;font-size:1.15rem;font-weight:700;color:#fff;}
+.f-logo b{color:var(--gold);}
+.f-info{font-size:.8rem;line-height:1.8;text-align:right;}
+.f-info a{color:var(--gold);text-decoration:none;}
+@media(max-width:768px){.footer-inner{flex-direction:column;text-align:center;}.f-info{text-align:center;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">거창<b>초재</b></a>
+    <ul class="nav-links">
+      <li><a href="#about">소개</a></li>
+      <li><a href="#products">제품</a></li>
+      <li><a href="#process">제조과정</a></li>
+      <li><a href="#reviews">후기</a></li>
+      <li><a href="#contact">오시는 길</a></li>
+    </ul>
+    <a href="tel:051-542-7711" class="nav-call">📞 051-542-7711</a>
+    <div class="hamburger" onclick="document.getElementById('mm').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mm">
+  <a href="#about" onclick="document.getElementById('mm').classList.remove('open')">소개</a>
+  <a href="#products" onclick="document.getElementById('mm').classList.remove('open')">제품</a>
+  <a href="#process" onclick="document.getElementById('mm').classList.remove('open')">제조과정</a>
+  <a href="#reviews" onclick="document.getElementById('mm').classList.remove('open')">후기</a>
+  <a href="#contact" onclick="document.getElementById('mm').classList.remove('open')">오시는 길</a>
+  <a href="tel:051-542-7711">📞 전화하기</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge">🌿 반송큰시장 · 30년 전통</div>
+      <h1>건강한 하루의 시작,<br><em>거창초재중탕</em></h1>
+      <p class="hero-desc">엄선된 한약재로 정성껏 달여내는 각종 중탕과 건강즙. 몸에 들어가는 거라 재료 하나하나 꼼꼼하게 확인합니다.</p>
+      <div class="hero-btns">
+        <a href="tel:051-542-7711" class="btn-gold">📞 전화 주문하기</a>
+        <a href="#products" class="btn-ghost">제품 보기 →</a>
+      </div>
+    </div>
+    <div>
+      <div class="hero-card">
+        <div class="icon">🍵</div>
+        <h3>거창초재중탕</h3>
+        <p>건강이 곧 재산입니다</p>
+        <div class="stats">
+          <div class="stat"><strong>30+</strong><small>전통 연수(년)</small></div>
+          <div class="stat"><strong>100%</strong><small>엄선 약재</small></div>
+          <div class="stat"><strong>20+</strong><small>제품 종류</small></div>
+          <div class="stat"><strong>365</strong><small>일 건강 관리</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="sec-tag">ABOUT US</div>
+      <h2 class="sec-title">거창초재중탕을 소개합니다</h2>
+      <p class="sec-sub">부산 해운대구 반송큰시장에서 30년 넘게 한약재 중탕과 건강즙을 정성껏 만들어온 전통 가게입니다.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="ic">🌿</div>
+        <h3>엄선된 약재</h3>
+        <p>질 좋은 한약재만을 직접 선별하여 사용합니다. 재료 하나하나 꼼꼼하게 확인하는 것이 저희의 원칙입니다.</p>
+      </div>
+      <div class="about-card">
+        <div class="ic">🔥</div>
+        <h3>전통 중탕 방식</h3>
+        <p>오랜 세월 이어온 전통 중탕 방식으로 약재의 유효 성분을 최대한 추출하여 깊고 진한 맛을 냅니다.</p>
+      </div>
+      <div class="about-card">
+        <div class="ic">💛</div>
+        <h3>30년 한결같은 정성</h3>
+        <p>건강은 곧 재산이라는 믿음으로, 가족이 먹는 마음으로 정직하게 만들어 고객의 신뢰를 쌓아왔습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section products" id="products">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="sec-tag">PRODUCTS</div>
+      <h2 class="sec-title">건강을 담은 제품들</h2>
+      <p class="sec-sub">각종 중탕, 한약, 건강즙 등 다양한 제품을 판매하고 있습니다.</p>
+    </div>
+    <div class="prod-grid">
+
+      <div class="prod-card">
+        <div class="top">
+          <div class="emoji">🍐</div>
+          <div><h3>배즙</h3><span class="tag">인기</span></div>
+        </div>
+        <p>기관지와 호흡기 건강에 좋은 배를 정성껏 달여 만든 건강즙입니다. 기침이 잦거나 목이 자주 아픈 분들께 추천드립니다.</p>
+        <div class="chips"><span class="chip">기관지</span><span class="chip">호흡기</span><span class="chip">환절기</span></div>
+      </div>
+
+      <div class="prod-card">
+        <div class="top">
+          <div class="emoji">🧅</div>
+          <div><h3>양파즙</h3><span class="tag">건강관리</span></div>
+        </div>
+        <p>혈관 건강과 혈액순환에 도움을 주는 양파즙. 콜레스테롤 관리가 필요한 분들께 꾸준히 사랑받는 제품입니다.</p>
+        <div class="chips"><span class="chip">혈관</span><span class="chip">혈액순환</span><span class="chip">콜레스테롤</span></div>
+      </div>
+
+      <div class="prod-card">
+        <div class="top">
+          <div class="emoji">🎃</div>
+          <div><h3>호박즙</h3><span class="tag">부종관리</span></div>
+        </div>
+        <p>붓기 빼기에 탁월한 늙은호박을 오랜 시간 달여 만들었습니다. 산후조리나 부종이 고민인 분들께 좋습니다.</p>
+        <div class="chips"><span class="chip">부종</span><span class="chip">산후조리</span><span class="chip">디톡스</span></div>
+      </div>
+
+      <div class="prod-card">
+        <div class="top">
+          <div class="emoji">🐟</div>
+          <div><h3>장어즙</h3><span class="tag">보양</span></div>
+        </div>
+        <p>원기 회복과 체력 보강에 좋은 장어를 한약재와 함께 달여낸 보양 중탕입니다. 피로가 쌓인 분들께 추천합니다.</p>
+        <div class="chips"><span class="chip">원기회복</span><span class="chip">체력보강</span><span class="chip">피로회복</span></div>
+      </div>
+
+      <div class="prod-card">
+        <div class="top">
+          <div class="emoji">🍵</div>
+          <div><h3>각종 한약 중탕</h3><span class="tag">맞춤</span></div>
+        </div>
+        <p>개인 체질과 건강 상태에 맞는 다양한 한약 중탕을 준비하고 있습니다. 전화 상담 후 맞춤 제조가 가능합니다.</p>
+        <div class="chips"><span class="chip">맞춤제조</span><span class="chip">한약재</span><span class="chip">상담가능</span></div>
+      </div>
+
+      <div class="prod-card">
+        <div class="top">
+          <div class="emoji">🎁</div>
+          <div><h3>건강 선물세트</h3><span class="tag">선물</span></div>
+        </div>
+        <p>부모님, 지인에게 건강을 선물하세요. 다양한 즙과 중탕을 모아 정성스럽게 포장해드립니다.</p>
+        <div class="chips"><span class="chip">효도선물</span><span class="chip">명절</span><span class="chip">포장</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process" id="process">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="sec-tag">PROCESS</div>
+      <h2 class="sec-title">정성이 담긴 제조 과정</h2>
+      <p class="sec-sub">좋은 재료를 엄선하는 것부터 포장까지, 한 단계도 소홀하지 않습니다.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>약재 선별</h4>
+        <p>질 좋은 한약재를 직접 눈으로 확인하고 엄선합니다.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>세척 · 손질</h4>
+        <p>깨끗하게 세척하고 정성껏 손질하여 준비합니다.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>전통 중탕</h4>
+        <p>오랜 시간 정성껏 달여 유효 성분을 충분히 추출합니다.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h4>포장 · 전달</h4>
+        <p>위생적으로 포장하여 신선한 상태로 전달합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews" id="reviews">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="sec-tag">REVIEWS</div>
+      <h2 class="sec-title">고객님들의 후기</h2>
+      <p class="sec-sub">건강해지셨다는 말씀이 저희에게 가장 큰 보람입니다.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <p class="txt">배즙 꾸준히 먹고 있는데 환절기에 기침이 확실히 줄었어요. 아이들도 잘 먹어서 온 가족이 함께 마시고 있습니다.</p>
+        <div class="author">김** 님</div>
+        <div class="meta">배즙 구매</div>
+      </div>
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <p class="txt">반송시장 올 때마다 꼭 들르는 곳이에요. 사장님이 친절하시고 재료에 대한 설명도 자세하게 해주셔서 믿고 삽니다.</p>
+        <div class="author">박** 님</div>
+        <div class="meta">양파즙·호박즙 구매</div>
+      </div>
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <p class="txt">부모님 선물로 장어즙 보내드렸는데 너무 좋아하세요. 30년 전통이라 그런지 맛도 품질도 확실히 다릅니다.</p>
+        <div class="author">이** 님</div>
+        <div class="meta">장어즙 선물</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="sec-tag">CONTACT</div>
+      <h2 class="sec-title">오시는 길</h2>
+      <p class="sec-sub">반송큰시장 내에 위치하고 있습니다. 편하게 방문해주세요.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="info-box">
+        <h3>매장 정보</h3>
+        <div class="info-row">
+          <div class="ic">📍</div>
+          <div>
+            <h4>주소</h4>
+            <p>부산 해운대구 윗반송로 51번길 83-31<br>(반송큰시장 내)</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="ic">📞</div>
+          <div>
+            <h4>전화번호</h4>
+            <p><a href="tel:051-542-7711">051-542-7711</a> (전화 문의·주문 가능)</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="ic">🕘</div>
+          <div>
+            <h4>영업시간</h4>
+            <p>매일 09:00 ~ 19:00<br><strong style="color:#c0392b;">매주 일요일 휴무</strong></p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="ic">🅿️</div>
+          <div>
+            <h4>주차 안내</h4>
+            <p>인근 공영주차장 이용<br>주차 지원 1시간</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="ic">📸</div>
+          <div>
+            <h4>인스타그램</h4>
+            <p><a href="https://www.instagram.com/geochang_jungtang/" target="_blank">@geochang_jungtang</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="map-box">
+        <iframe src="https://www.google.com/maps?q=부산+해운대구+윗반송로+51번길+83-31&output=embed" allowfullscreen loading="lazy"></iframe>
+        <div class="map-caption">
+          <h4>반송큰시장 내 위치</h4>
+          <p>부산 해운대구 윗반송로 51번길 83-31 · 공영주차장 이용 시 주차 1시간 지원</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>건강이 궁금하시면 편하게 전화주세요</h2>
+  <p>제품 문의 · 주문 · 상담 모두 가능합니다</p>
+  <a href="tel:051-542-7711" class="cta-btn">📞 051-542-7711</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="f-logo">거창<b>초재</b>중탕</div>
+    <div class="f-info">
+      부산 해운대구 윗반송로 51번길 83-31 (반송큰시장 내)<br>
+      TEL <a href="tel:051-542-7711">051-542-7711</a> · 영업시간 09:00~19:00 · 일요일 휴무<br>
+      Instagram <a href="https://www.instagram.com/geochang_jungtang/" target="_blank">@geochang_jungtang</a><br>
+      © 2025 거창초재중탕. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').classList.toggle('scrolled',window.scrollY>50);
+});
+
+// Simple fade-in on scroll (optional enhancement)
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});
+},{threshold:0.1});
+document.querySelectorAll('.about-card,.prod-card,.rev-card,.step').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='all .5s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
